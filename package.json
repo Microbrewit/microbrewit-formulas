@@ -1,0 +1,22 @@
+{
+  "name": "microbrewit-formulas",
+  "version": "1.0.0",
+  "description": "Beer formulas and conversion between units.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Microbrewit/microbrewit-formulas.git"
+  },
+  "author": "Torstein Thune <torstein@gmail.com> (http://thune.io/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Microbrewit/microbrewit-formulas/issues"
+  },
+  "homepage": "https://github.com/Microbrewit/microbrewit-formulas#readme",
+  "dependencies": {
+    "lodash": "^3.10.1"
+  }
+}
