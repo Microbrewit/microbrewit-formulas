@@ -10,27 +10,38 @@ module.exports =
 
 	# Dave Miller, 1988
 	miller: (og, fg) ->
-		return ((og-fg)/0.75)*100
+		calc = ((og-fg)/0.75)*100
+		calc = 0 if _.isNaN(calc)
+		return calc
 
 	# George Fix (Unimplemented)
 	fix: null
 
 	# Rule of thumb
 	simple: (og, fg) ->
-		return (og-fg)*131.25
+		calc = (og-fg)*131.25
+		calc = 0 if _.isNaN(calc)
+		return calc
 
 	alternativeSimple: (og, fg) ->
-
-		return ((1.05/0.79)*((og-fg/fg))*100)
+		calc = ((1.05/0.79)*((og-fg/fg))*100)
+		calc = 0 if _.isNaN(calc)
+		return calc
 
 	advanced: (og, fg) ->
-		return (og-fg)*(100.3*(og-fg) + 125.65)
+		calc = (og-fg)*(100.3*(og-fg) + 125.65)
+		calc = 0 if _.isNaN(calc)
+		return calc
 
 	alternativeAdvanced: (og, fg) ->
-		return (76.08 * (og-fg) / (1.775-og)) * (fg / 0.794)
+		calc = (76.08 * (og-fg) / (1.775-og)) * (fg / 0.794)
+		calc = 0 if _.isNaN(calc)
+		return calc
 
 	microbrewit: (og, fg) ->
-		return ((@alternativeSimple(og, fg)+@alternativeAdvanced(og,fg)+@simple(og, fg)+@advanced(og,fg)+@miller(og, fg))/5)
+		calc = ((@alternativeSimple(og, fg)+@alternativeAdvanced(og,fg)+@simple(og, fg)+@advanced(og,fg)+@miller(og, fg))/5)
+		calc = 0 if _.isNaN(calc)
+		return calc
 
 
 	calc: (og, fg, formula) ->
