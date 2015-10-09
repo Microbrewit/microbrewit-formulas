@@ -2,7 +2,7 @@
   "name": "microbrewit-formulas",
   "version": "1.0.0",
   "description": "Beer formulas and conversion between units.",
-  "main": "lib/index.js",
+  "main": "src/index.coffee",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
