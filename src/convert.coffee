@@ -21,13 +21,13 @@ module.exports =
 		lbs: (oz) ->
 			return oz*0.0625
 		grams: (oz) ->
-			return oz/0.035274
+			return Math.round(oz/0.035274)
 		kg: (oz) ->
 			return (oz/0.035274)/1000
 
 	grams:
 		oz: (grams) ->
-			return grams*0.035274
+			return  +(grams*0.035274).toFixed(2)
 		kg: (grams) ->
 			return grams/1000
 		lbs: (grams) ->
@@ -35,7 +35,7 @@ module.exports =
 
 	kg:
 		grams: (kg) ->
-			return kg*1000
+			return Math.round(kg*1000)
 		lbs: (kg) ->
 			return kg*2.2046
 		oz: (kg) ->
@@ -47,7 +47,7 @@ module.exports =
 		kg: (lbs) ->
 			return lbs/2.2046
 		grams: (lbs) ->
-			return (lbs/2.2046)*1000
+			return Math.round((lbs/2.2046)*1000)
 
 	celcius:
 		farenheit: (celcius) ->
