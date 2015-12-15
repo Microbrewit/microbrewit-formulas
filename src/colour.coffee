@@ -26,7 +26,7 @@ module.exports =
 	# Morey
 	# @return [float] srm
 	morey: (calcObj) ->
-		calcObj.mcu = @mcu(weight, lovibond, postBoilVolume) unless calcObj.mcu?
+		calcObj.mcu = @mcu(calcObj.weight, calcObj.lovibond, calcObj.postBoilVolume) unless calcObj.mcu?
 
 		return 1.4922 * Math.pow(calcObj.mcu, 0.6859)
 	
