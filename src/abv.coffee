@@ -3,8 +3,6 @@
 
 convert = require './convert'
 _ = require 'lodash'
-math = require 'mathjs'
-Big = require 'big.js'
 Decimal = require 'decimal.js'
 Decimal.config({'errors':false})
 
