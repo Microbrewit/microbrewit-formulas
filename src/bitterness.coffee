@@ -15,16 +15,16 @@ convert = require './convert'
 
 # Tinseth helpers
 tinsethUtilisation = (og, boilTime) ->
-	boilTimeFactor = (1-Math.exp(-0.04*boilTime))/4.15
+	boilTimeFactor = (1-Math.exp(-0.04*boilTime))/ 4.15
 	bignessFactor = 1.65*Math.pow(0.000125, (og-1))
 	utilisation = bignessFactor * boilTimeFactor
 	return utilisation
 
 tinsethMgl = (weight, alphaAcid, batchSize) ->
 	# mg/L
-	alphaAcid = alphaAcid/100;
+	alphaAcid = alphaAcid / 100;
 
-	return (alphaAcid*weight*1000)/batchSize
+	return (alphaAcid*weight*1000) / batchSize
 
 tinsethIbu = (mgl, utilisation) ->
 	return utilisation*mgl
@@ -32,16 +32,16 @@ tinsethIbu = (mgl, utilisation) ->
 # Rager helpers
 tanh = (x) ->
 	e = Math.exp(2*x)
-	return (e-1)/(e+1)
+	return (e-1) / (e+1)
 
 ragerUtilisation = (boilTime) ->
 	return (18.11 + 13.86 * tanh((boilTime-31.32) / 18.27)) / 100
 
 ragerIbu = (weight, utilisation, alphaAcid, boilVolume, boilGravity) ->
 	ga = 0
-	alphaAcid = alphaAcid/100
+	alphaAcid = alphaAcid / 100
 	if boilGravity > 1.050
-		ga = (boilGravity-1.050)/0.2
+		ga = (boilGravity-1.050) / 0.2
 	
 	return (weight * utilisation * alphaAcid * 1000) / (boilVolume * (1+ga))
 

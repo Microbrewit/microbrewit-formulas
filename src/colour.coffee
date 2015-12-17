@@ -21,7 +21,7 @@ module.exports =
 		weight = convert.convert(weight, 'kg', 'lbs')
 		volume = convert.convert(postBoilVolume, 'liters', 'gallons')
 
-		return (weight*lovibond /volume)
+		return (weight*lovibond / volume)
 
 	# Morey
 	# @return [float] srm

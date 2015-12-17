@@ -12,13 +12,13 @@ describe 'ABV', ->
 		abv['miller'](1.040,1.010).should.be.a('number')
 		abv['miller'](null, null).should.equal(0)
 		abv['miller'](1.040,1.010).should.equal(4.00)
-		abv['miller'](1.062,1.015).should.equal(6.27)
+		abv['miller'](1.062,1.015).should.equal(6.266666666666667)
 
 	it 'Simple', ->
 		abv['simple'](1.040,1.010).should.be.a('number')
 		abv['simple'](null, null).should.equal(0)
-		abv['simple'](1.040,1.010).should.equal(3.94)
-		abv['simple'](1.062,1.015).should.equal(6.17)
+		abv['simple'](1.040,1.010).should.equal(3.9375)
+		abv['simple'](1.062,1.015).should.equal(6.16875)
 
 	it 'Alternative Simple', ->
 		abv['alternativeSimple'](1.040,1.010).should.be.a('number')

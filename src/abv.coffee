@@ -23,13 +23,12 @@ module.exports =
 
 	# Rule of thumb
 	simple: (og, fg) ->
-		console.log(Decimal.errors)
 		calc = new Decimal(og).minus(fg).times(131.25)
 		calc = new Decimal(0) if calc.isNaN()
 		return calc.toNumber()
 
 	alternativeSimple: (og, fg) ->
-		calc = ((1.05/0.79)*((og-fg)/fg))*100
+		calc = ((1.05 / 0.79)*((og-fg) / fg))*100
 		calc = 0 if _.isNaN(calc)
 		return +calc.toFixed(2)
 
@@ -44,7 +43,7 @@ module.exports =
 		return +calc.toFixed(2)
 
 	microbrewit: (og, fg) ->
-		calc = ((@alternativeSimple(og, fg)+@alternativeAdvanced(og,fg)+@simple(og, fg)+@advanced(og,fg)+@miller(og, fg))/5)
+		calc = ((@alternativeSimple(og, fg)+@alternativeAdvanced(og,fg)+@simple(og, fg)+@advanced(og,fg)+@miller(og, fg)) / 5)
 		calc = 0 if _.isNaN(calc)
 		return +calc.toFixed(2)
 
