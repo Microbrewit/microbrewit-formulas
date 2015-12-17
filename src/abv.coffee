@@ -3,6 +3,10 @@
 
 convert = require './convert'
 _ = require 'lodash'
+math = require 'mathjs'
+Big = require 'big.js'
+Decimal = require 'decimal.js'
+Decimal.config({'errors':false})
 
 module.exports =
 	available: () ->
@@ -10,18 +14,19 @@ module.exports =
 
 	# Dave Miller, 1988
 	miller: (og, fg) ->
-		calc = ((og-fg)/0.75)*100
-		calc = 0 if _.isNaN(calc)
-		return +calc.toFixed(2)
+		calc = new Decimal(og).minus(fg).div(0.75).times(100)
+		calc = new Decimal(0) if calc.isNaN()
+		return calc.toNumber()
 
 	# George Fix (Unimplemented)
 	fix: null
 
 	# Rule of thumb
 	simple: (og, fg) ->
-		calc = (og-fg)*131.25
-		calc = 0 if _.isNaN(calc)
-		return +calc.toFixed(2)
+		console.log(Decimal.errors)
+		calc = new Decimal(og).minus(fg).times(131.25)
+		calc = new Decimal(0) if calc.isNaN()
+		return calc.toNumber()
 
 	alternativeSimple: (og, fg) ->
 		calc = ((1.05/0.79)*((og-fg)/fg))*100
