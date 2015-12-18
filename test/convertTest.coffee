@@ -28,17 +28,30 @@ describe 'CONVERT', ->
 	#kg
 	it 'kg to grams to kg', ->
 		convert['kg']['grams'](a).should.be.a('number')
-		convert['kg']['grams'](a).should.equal(0)
+		convert['kg']['grams'](null).should.equal(0)
 		convert['grams']['kg'](convert['kg']['grams'](a)).should.equal(a)	
 		convert['grams']['kg'](convert['kg']['grams'](y)).should.equal(y)
+		
 	it 'kg to lbs to kg', ->
 		convert['kg']['lbs'](a).should.be.a('number')
 		convert['kg']['lbs'](null).should.equal(0)
 		convert['lbs']['kg'](convert['kg']['lbs'](a)).should.equal(a)	
 		convert['lbs']['kg'](convert['kg']['lbs'](y)).should.equal(y)
 	
+	it 'kg to oz to kg', ->
+		convert['kg']['oz'](a).should.be.a('number')
+		convert['kg']['oz'](null).should.equal(0)
+		convert['oz']['kg'](convert['kg']['oz'](a)).should.equal(a)	
+		convert['oz']['kg'](convert['kg']['oz'](y)).should.equal(y)
+	
 	it 'oz to grams to oz', ->
 		convert['oz']['grams'](a).should.be.a('number')
 		convert['oz']['grams'](null).should.equal(0)
 		convert['grams']['oz'](convert['oz']['grams'](a)).should.equal(a)
 		convert['grams']['oz'](convert['oz']['grams'](y)).should.equal(y)
+	
+	it 'oz to lbs to oz', ->
+		convert['oz']['lbs'](a).should.be.a('number')
+		convert['oz']['lbs'](null).should.equal(0)
+		convert['lbs']['oz'](convert['oz']['lbs'](a)).should.equal(a)
+		convert['lbs']['oz'](convert['oz']['lbs'](y)).should.equal(y)

@@ -26,15 +26,15 @@ module.exports =
 
 	oz:
 		lbs: (oz) ->
-			calc = new Decimal(oz).times(16).toNumber()
-			return 0 if _.isNaN(calc)
+			calc = new Decimal(oz).times(16)
+			return 0 if calc.isNaN()
 			return calc.toNumber()
 		grams: (oz) ->
 			calc = new Decimal(oz).div(0.03527396195)
 			return 0 if calc.isNaN()
 			return calc.toNumber()
 		kg: (oz) ->
-			calc = new Decimal(oz).div(0.03527396195)
+			calc = new Decimal(oz).div(35.27396195)
 			return 0 if calc.isNaN()
 			return calc.toNumber()
 	grams:
