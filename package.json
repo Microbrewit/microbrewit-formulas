@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/Microbrewit/microbrewit-formulas#readme",
   "dependencies": {
-    "lodash": "^3.10.1"
+    "decimal.js": "^4.0.3",
+    "lodash.isnan": "^3.0.2"
   },
   "devDependencies": {
     "coffee-script": "latest",
