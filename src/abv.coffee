@@ -5,8 +5,14 @@ convert = require './convert'
 _ = require 'lodash'
 
 module.exports =
-	available: () ->
-		return ['miller', 'fix', 'simple', 'alternativeSimple', 'advanced', 'alternativeAdvanced', 'microbrewit']
+	# @return [Array<String>] Available formulae
+	available: ->
+		available = Object.keys @
+
+		available.splice(available.indexOf('available'), 1)
+		available.splice(available.indexOf('calc'), 1)
+
+		return available
 
 	# Dave Miller, 1988
 	miller: (og, fg) ->
