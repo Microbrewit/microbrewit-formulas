@@ -2,7 +2,8 @@
 # @copyright 2015 Microbrew.it
 
 convert = require './convert'
-_ = require 'lodash'
+_ = 
+    isNaN: require 'lodash.isnan'
 Decimal = require 'decimal.js'
 Decimal.config({'errors':false})
 
