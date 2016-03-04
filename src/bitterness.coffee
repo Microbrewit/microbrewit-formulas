@@ -50,8 +50,13 @@ mashAdjustment = (aa) ->
 	return aa*0.2 # 80% decrease in mash
 
 module.exports =
-	available: () ->
-		return ['rager', 'tinseth']
+	# @return [Array<String>] Available formulae
+	available: ->
+		available = Object.keys @
+
+		available.splice(available.indexOf('available'), 1)
+
+		return available
 
 	# Rager
 	# @param [Object] hopObj

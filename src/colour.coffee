@@ -7,9 +7,13 @@
 convert = require './convert'
 
 module.exports =
-	# Return available formulas
-	available: () ->
-		return ['morey', 'daniels', 'mosher']
+	# @return [Array<String>] Available formulae
+	available: ->
+		available = Object.keys @
+
+		available.splice(available.indexOf('available'), 1)
+
+		return available
 
 	# Calculate mcu
 	# MCU takes metric values
