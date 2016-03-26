@@ -57,7 +57,7 @@ gravityPoints = (calc) ->
 
 	# We only take into account efficiency for malts and grains
 	# Other types of fermenables (notably sugars and sirups) have 100% efficiency
-	if type is 'malt' or type is 'grain'
+	if calc.type is 'malt' or calc.type is 'grain'
 		calc.efficiency = parseFloat(calc.efficiency)/100
 	else
 		calc.efficiency = 1
