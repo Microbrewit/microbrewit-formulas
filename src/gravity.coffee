@@ -49,11 +49,11 @@ gravityPoints = (calc) ->
 
 	# Convert point per gallon per gallon to 
 	# points per kg per liter
-	pKgL = calc.ppg * 0.11982643 / 8.3454045
+	# pKgL = calc.ppg * 0.11982643 / 8.3454045
 
 	# Formula uses imperial measures
-	calc.weight = convert.convert(parseFloat(calc.amount), calc.weightUnit, 'kg')
-	calc.volume = convert.convert(parseFloat(calc.volume), calc.fluidUnit, 'liters')
+	calc.weight = convert.convert(parseFloat(calc.amount), calc.weightUnit, 'lbs')
+	calc.volume = convert.convert(parseFloat(calc.volume), calc.fluidUnit, 'gallons')
 
 	# We only take into account efficiency for malts and grains
 	# Other types of fermenables (notably sugars and sirups) have 100% efficiency
@@ -61,10 +61,8 @@ gravityPoints = (calc) ->
 		calc.efficiency = parseFloat(calc.efficiency)/100
 	else
 		calc.efficiency = 1
-
-	console.log calc.weight + ' ' + pKgL + ' ' + calc.efficiency + ' ' + calc.volume
 	
-	gravityPoints = Math.round((calc.weight * pKgL * calc.efficiency) / calc.volume)
+	gravityPoints = Math.round((calc.weight * calc.ppg * calc.efficiency) / calc.volume)
 
 	return gravityPoints
 
