@@ -62,9 +62,9 @@ gravityPoints = (calc) ->
 	else
 		calc.efficiency = 1
 
-	console.log calc.weight + ' ' + calc.ppg + ' ' + calc.efficiency + ' ' + calc.volume
+	console.log calc.weight + ' ' + pKgL + ' ' + calc.efficiency + ' ' + calc.volume
 	
-	gravityPoints = Math.round((calc.weight * calc.ppg * calc.efficiency) / calc.volume)
+	gravityPoints = Math.round((calc.weight * pKgL * calc.efficiency) / calc.volume)
 
 	return gravityPoints
 
