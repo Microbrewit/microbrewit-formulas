@@ -29,20 +29,20 @@ module.exports =
 
 	# Morey
 	# @return [float] srm
-	morey: (calcObj) ->
-		calcObj.mcu = @mcu(calcObj.weight, calcObj.lovibond, calcObj.postBoilVolume) unless calcObj.mcu?
+	morey: (calc) ->
+		calc.mcu = @mcu(calc.weight, calc.lovibond, calc.postBoilVolume) unless calc.mcu?
 
-		return 1.4922 * Math.pow(calcObj.mcu, 0.6859)
+		return 1.4922 * Math.pow(calc.mcu, 0.6859)
 	
 	# Daniels
 	# @return [float] srm
-	daniels: (calcObj) ->
-		calcObj.mcu = @mcu(weight, lovibond, postBoilVolume) unless calcObj.mcu?
+	daniels: (calc) ->
+		calc.mcu = @mcu(calc.weight, calc.lovibond, calc.postBoilVolume) unless calc.mcu?
 
-		return (0.2 * calcObj.mcu) + 8.4
+		return (0.2 * calc.mcu) + 8.4
 
 	# Mosher
 	# @return [float] srm
-	mosher: (calcObj) ->
-		calcObj.mcu = @mcu(weight, lovibond, postBoilVolume) unless calcObj.mcu?
-		return (0.3 * calcObj.mcu) + 4.7
+	mosher: (calc) ->
+		calc.mcu = @mcu(calc.weight, calc.lovibond, calc.postBoilVolume) unless calc.mcu?
+		return (0.3 * calc.mcu) + 4.7
