@@ -1,11 +1,12 @@
 {
   "name": "microbrewit-formulas",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Beer formulas and conversion between units.",
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha --compilers coffee:coffee-script/register",
-    "prepublish": "coffee -o lib/ -c src/"
+    "build": "coffee -o lib/ -c src/",
+    "prepublish": "npm build"
   },
   "repository": {
     "type": "git",

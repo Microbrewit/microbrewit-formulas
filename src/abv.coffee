@@ -3,7 +3,7 @@
 
 convert = require './convert'
 _ = 
-    isNaN: require 'lodash.isnan'
+	isNaN: require 'lodash.isnan'
 Decimal = require 'decimal.js'
 Decimal.config({'errors':false})
 
